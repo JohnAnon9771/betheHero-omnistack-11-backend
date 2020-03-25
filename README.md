@@ -1,7 +1,7 @@
 # Entidades
 
 <li>Ong</li>
-<li>Caso (incidente)</li>
+<li>Caso (incident)</li>
 
 # Funcionalidades
 
