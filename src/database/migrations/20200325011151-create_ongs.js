@@ -4,10 +4,11 @@ module.exports = {
       id: {
         type: Sequelize.STRING,
         primaryKey: true,
+        allowNull: false,
       },
       name: {
         type: Sequelize.STRING,
-        allowNull: true,
+        allowNull: false,
       },
       email: {
         type: Sequelize.STRING,

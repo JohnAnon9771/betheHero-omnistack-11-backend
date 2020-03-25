@@ -5,10 +5,11 @@ module.exports = {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
+        allowNull: false,
       },
       title: {
         type: Sequelize.STRING,
-        allowNull: true,
+        allowNull: false,
       },
       description: {
         type: Sequelize.STRING,
@@ -24,6 +25,7 @@ module.exports = {
           model: 'ongs',
           key: 'id',
         },
+        allowNull: false,
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
