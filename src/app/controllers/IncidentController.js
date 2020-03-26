@@ -4,10 +4,14 @@ import Ongs from '../models/Ongs';
 class IncidentController {
   async index(req, res) {
     try {
-      const response = await Incidents.findAll({
+      const { page = 1 } = req.query;
+      const { count, rows } = await Incidents.findAndCountAll({
+        limit: 5,
+        offset: (page - 1) * 5,
         include: { model: Ongs, as: 'ongs' },
       });
-      return res.json(response);
+      res.header('X-Total-Count', count);
+      return res.json(rows);
     } catch (error) {
       return res.status(500).json({ error: { message: 'Error no servidor!' } });
     }
